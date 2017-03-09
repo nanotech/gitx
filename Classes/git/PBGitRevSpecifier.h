@@ -9,6 +9,8 @@
 #import <Cocoa/Cocoa.h>
 @class PBGitRef;
 
+NS_ASSUME_NONNULL_BEGIN
+
 @interface PBGitRevSpecifier : NSObject  <NSCopying> {
 	NSString *description;
 	NSArray *parameters;
@@ -16,12 +18,12 @@
 	BOOL isSimpleRef;
 }
 
-- (id) initWithParameters:(NSArray *)params description:(NSString *)descrip;
+- (id) initWithParameters:(NSArray *)params description:(NSString * _Nullable)descrip;
 - (id) initWithParameters:(NSArray*) params;
 - (id) initWithRef: (PBGitRef*) ref;
 
-- (NSString*) simpleRef;
-- (PBGitRef *) ref;
+- (NSString * _Nullable) simpleRef;
+- (PBGitRef * _Nullable) ref;
 - (BOOL) hasPathLimiter;
 - (NSString *) title;
 
@@ -38,3 +40,5 @@
 @property(readonly) BOOL isSimpleRef;
 
 @end
+
+NS_ASSUME_NONNULL_END
